@@ -25,3 +25,4 @@ def try_me():
             print(f"Read four Wiki page: {random_list[i]['title']}")
             webbrowser.open(f'{page_to_open}{random_list[i]["id"]}')
             break
+        return random_list[i]['title']
