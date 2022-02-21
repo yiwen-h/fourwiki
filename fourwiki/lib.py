@@ -22,7 +22,7 @@ def try_me():
         fourmatch = re.fullmatch(r"(\b\w[-?']?\w[-?']?\w[?']?\w\b[!?]?\s?)+(\(\w{4}\))?", random_list[i]['title'])
         if fourmatch:
             print(f"Read four Wiki page: {random_list[i]['title']}")
-            webbrowser.open(f'{page_to_open}{random_list[i]["id"]}')
+            webbrowser.open_new_tab(f'{page_to_open}{random_list[i]["id"]}')
             status = True
             break
     if status == False:
