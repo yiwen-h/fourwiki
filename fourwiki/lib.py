@@ -1,8 +1,6 @@
 import requests, re
 import webbrowser
 
-
-
 def try_me():
     # returns a random four four wiki page
     S = requests.Session()
@@ -28,5 +26,5 @@ def try_me():
             status = True
             break
     if status == False:
-        return f"Oops, can't find four wiki page!"
+        return "Oops, can't find four wiki page!"
     return 'Yayy done'

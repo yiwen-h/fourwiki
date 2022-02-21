@@ -5,4 +5,4 @@ from fourwiki.lib import try_me
 st.title('View some four wiki page')
 
 if st.button('HERE'):
-    try_me()
+    print(try_me())
