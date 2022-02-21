@@ -8,5 +8,4 @@ click = st.button('HERE')
 
 if click:
     result = try_me()
-
-print(result)
+    st.write(result)
