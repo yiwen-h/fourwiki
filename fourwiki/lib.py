@@ -18,11 +18,15 @@ def try_me():
     data = request.json()
     page_to_open = 'https://en.wikipedia.org/?curid='
     random_list = data["query"]["random"]
+    status = False
 
     for i in range(len(random_list)):
         fourmatch = re.fullmatch(r"(\b\w[-?']?\w[-?']?\w[?']?\w\b[!?]?\s?)+(\(\w{4}\))?", random_list[i]['title'])
         if fourmatch:
             print(f"Read four Wiki page: {random_list[i]['title']}")
             webbrowser.open(f'{page_to_open}{random_list[i]["id"]}')
+            status = True
             break
-        return random_list[i]['title']
+    if status == False:
+        return f"Oops, can't find four wiki page!"
+    return 'Yayy done'
