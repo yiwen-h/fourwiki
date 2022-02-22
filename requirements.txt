@@ -12,4 +12,4 @@ pytest
 
 # webapp
 streamlit
-tkinter
+tk
