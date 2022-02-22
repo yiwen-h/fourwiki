@@ -1,7 +1,7 @@
 
 # Context:
 My husband is in a band called FOUR FOUR (https://www.instagram.com/fourfourband/).
-There are four members in the band, they all ahve four letters in their first and last names. \
+There are four members in the band, they all have four letters in their first and last names. \
 They only play music by composers with four letters in their names.
 Most of their group chats are conducted only using words with four letters.
 
