@@ -1,4 +1,3 @@
-from turtle import onclick
 import streamlit as st
 
 from fourwiki.lib import try_me
