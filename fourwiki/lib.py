@@ -3,16 +3,16 @@ import webbrowser
 
 def try_me():
     # returns a random four four wiki page
-    S = requests.Session()
-    URL = "https://en.wikipedia.org/w/api.php"
-    PARAMS = {
+    req = requests.Session()
+    url = "https://en.wikipedia.org/w/api.php"
+    params = {
         "action": "query",
         "format": "json",
         "list": "random",
         "rnlimit": "444",
         "rnnamespace": "0",
     }
-    request = S.get(url=URL, params=PARAMS)
+    request = req.get(url=url, params=params)
     data = request.json()
     page_to_open = 'https://en.wikipedia.org/?curid='
     random_list = data["query"]["random"]
@@ -21,10 +21,12 @@ def try_me():
     for i in range(len(random_list)):
         fourmatch = re.fullmatch(r"(\b\w[-?']?\w[-?']?\w[?']?\w\b[!?]?\s?)+(\(\w{4}\))?", random_list[i]['title'])
         if fourmatch:
-            print(f"Read four Wiki page: {random_list[i]['title']}")
-            webbrowser.open_new_tab(f'{page_to_open}{random_list[i]["id"]}')
+            status_text = (f"Yayy done! Read four Wiki page: {random_list[i]['title']}")
+            link = f'{page_to_open}{random_list[i]["id"]}'
+            #webbrowser.open_new_tab(f'{page_to_open}{random_list[i]["id"]}')
             status = True
             break
     if status == False:
-        return "Oops, can't find four wiki page!"
-    return 'Yayy done'
+        status_text = "Oops, can't find four wiki page! Once more?"
+        link = 'https://somefourwikipage.herokuapp.com/'
+    return link, status_text

@@ -1,3 +1,4 @@
+from turtle import onclick
 import streamlit as st
 
 from fourwiki.lib import try_me
@@ -7,5 +8,6 @@ st.title('View some four wiki page')
 click = st.button('HERE')
 
 if click:
-    result = try_me()
-    st.write(result)
+    link, status_text = try_me()
+    st.markdown(link, unsafe_allow_html=True)
+    st.write(status_text)
